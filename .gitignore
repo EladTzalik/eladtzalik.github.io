@@ -1,0 +1,17 @@
+# Instructional files (not needed for live site)
+TODO.md
+FINAL_STATUS.md
+IMAGE_SETUP.md
+
+# Duplicate image
+Image.png
+
+# macOS
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
