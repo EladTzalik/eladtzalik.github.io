@@ -1,3 +1,18 @@
+// Track the homepage link separately from visits to the article itself.
+document.querySelectorAll('a[href="research-and-ai.html"]').forEach(link => {
+    const trackClick = event => {
+        if (event.type === 'auxclick' && event.button !== 1) return;
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', 'research_ai_link_click', {
+                link_url: link.href,
+                link_text: link.textContent.trim()
+            });
+        }
+    };
+    link.addEventListener('click', trackClick);
+    link.addEventListener('auxclick', trackClick);
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
